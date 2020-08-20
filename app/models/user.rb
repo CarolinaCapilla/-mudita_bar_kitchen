@@ -5,7 +5,7 @@ class User < ApplicationRecord
   validates :name, length: { minimum: 2 }
   validates :name, uniqueness: true
   validates :description, length: { minimum: 150 }
-
+  # validates :email, format: { with: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/ }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

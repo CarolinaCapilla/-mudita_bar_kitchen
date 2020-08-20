@@ -3,11 +3,12 @@ class Item < ApplicationRecord
 
   validates :dish, :description, :category, :price, :allergen, presence: true
   validates :description, length: { minimum: 300 }
-  validates :description, inclusion: { in: ["Starters", "Mains", "Desserts", "Sharing", "Platters", "Snacks", "Specials",
-                                            "Drinks",
-                                            "Soft Drinks",
-                                            "Hot Drinks",
-                                            "Alcoholic Drinks"] }
+  validates :category, inclusion: { in: ["Starters", "Mains", "Desserts", "Sharing", "Platters", "Snacks",
+                                         "Specials",
+                                         "Drinks",
+                                         "Soft Drinks",
+                                         "Hot Drinks",
+                                         "Alcoholic Drinks"] }
   validates :allergen, inclusion: { in: ["Celery", "Cereals containing gluten", "Crustaceans", "Eggs", "Fish",
                                          "Lupin",
                                          "Milk",
