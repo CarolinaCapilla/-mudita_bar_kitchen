@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_20_185540) do
+ActiveRecord::Schema.define(version: 2020_08_22_101616) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,10 +19,9 @@ ActiveRecord::Schema.define(version: 2020_08_20_185540) do
     t.float "price"
     t.bigint "user_id", null: false
     t.bigint "station_id", null: false
-    t.datetime "start_timestamp"
-    t.datetime "end_timestamp"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "date"
     t.index ["station_id"], name: "index_bookings_on_station_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
