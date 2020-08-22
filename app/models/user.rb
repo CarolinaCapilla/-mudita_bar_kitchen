@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :kitchens
+  has_many :kitchens, :items, :reviews, dependant: :destroy
 
   validates :name, :email, :address, :description, presence: true
   validates :name, length: { minimum: 2 }
