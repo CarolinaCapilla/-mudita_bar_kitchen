@@ -3,4 +3,8 @@ class Order < ApplicationRecord
   has_many :items, dependent: :destroy
 
   # validates :devlivery_address, presence: true
+
+  # def processing
+  #   @order.status = "Processing"
+  # end
 end
