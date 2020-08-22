@@ -3,7 +3,7 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :station
 
-  # validates :price, :start_timestamp, :end_timestamp, presence: true
+  # validates :date, presence: true
   # validates :price, numericality: true
 
   def calculate_price
