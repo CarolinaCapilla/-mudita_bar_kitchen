@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_08_22_105445) do
+=======
+
+ActiveRecord::Schema.define(version: 2020_08_22_154805) do
+
+>>>>>>> a0a583e8868492949f07c887a7615574345c5c30
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +28,8 @@ ActiveRecord::Schema.define(version: 2020_08_22_105445) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.date "date"
+    t.bigint "kitchen_id", null: false
+    t.index ["kitchen_id"], name: "index_bookings_on_kitchen_id"
     t.index ["station_id"], name: "index_bookings_on_station_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -49,7 +57,7 @@ ActiveRecord::Schema.define(version: 2020_08_22_105445) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.string "status"
+    t.string "status", default: "Pending"
     t.string "delivery_address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -71,10 +79,9 @@ ActiveRecord::Schema.define(version: 2020_08_22_105445) do
   end
 
   create_table "stations", force: :cascade do |t|
-    t.bigint "kitchen_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["kitchen_id"], name: "index_stations_on_kitchen_id"
+    t.boolean "available", default: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -89,10 +96,12 @@ ActiveRecord::Schema.define(version: 2020_08_22_105445) do
     t.string "address"
     t.text "description"
     t.boolean "chef", default: false
+    t.boolean "chef_status", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "kitchens"
   add_foreign_key "bookings", "stations"
   add_foreign_key "bookings", "users"
   add_foreign_key "items", "users"
@@ -101,5 +110,4 @@ ActiveRecord::Schema.define(version: 2020_08_22_105445) do
   add_foreign_key "orders", "users"
   add_foreign_key "reviews", "kitchens"
   add_foreign_key "reviews", "users"
-  add_foreign_key "stations", "kitchens"
 end
