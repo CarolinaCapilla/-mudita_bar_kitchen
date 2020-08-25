@@ -8,7 +8,7 @@ class StationsController < ApplicationController
   end
 
   def create
-    @station = Station.new(item_params)
+    @station = Station.new(station_params)
     @station.user = current_user
     if @station.save
       redirect_to station_path(@station), notice: "Station successfully created."
@@ -34,7 +34,6 @@ class StationsController < ApplicationController
 
   private
   def station_params
-    params.require(:name).permit(:title, :price, :description, :category, :address, :photo)
+    params.require(:station).permit(:available, :name, :description)
   end
-
 end
