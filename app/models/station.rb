@@ -1,3 +1,3 @@
 class Station < ApplicationRecord
-  belongs_to :kitchen
+  has_many :bookings # or has_one booking ????
 end
