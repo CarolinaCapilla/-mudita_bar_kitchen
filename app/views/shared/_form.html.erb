@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <div class="form-item">
+        <h2 class="text-center">New Menu Item</h2>
+        <%= simple_form_for @item do |f| %>
+        <div class="row">
+          <div class="col-xs-6">
+            <%= f.input :dish %>
+          </div>
+
+          <div class="col-xs-6">
+            <%= f.input :ingredient %>
+          </div>
+        </div>
+        <%= f.input :description %>
+        <%= f.input :category, collection: Item::CATEGORIES, as: :check_boxes, class: 'category-choice' %>
+        <%= f.input :allergen, collection: Item::ALLERGENS, as: :check_boxes %>
+          <%= f.input :price, placeholder: "Price in £" %>
+          <%= f.button :submit, class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
