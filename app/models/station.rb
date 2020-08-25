@@ -1,4 +1,3 @@
 class Station < ApplicationRecord
-  belongs_to :bookings
-  has_many :bookings
+  has_many :bookings # or has_one booking ????
 end
