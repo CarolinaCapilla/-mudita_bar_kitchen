@@ -4,8 +4,10 @@ class Booking < ApplicationRecord
   belongs_to :kitchen
   belongs_to :station
 
-  validates :price, :date, presence: true
-  validates :price, numericality: true
+
+  # validates :date, :price, presence: true
+  # validates :price, numericality: true
+
 
   def calculate_price
     # check for the date and the shift type
