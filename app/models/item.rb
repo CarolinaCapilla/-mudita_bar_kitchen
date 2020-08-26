@@ -3,8 +3,8 @@ class Item < ApplicationRecord
 
   CATEGORIES = ["Starters", "Mains", "Desserts", "Sharing", "Platters", "Snacks", "Specials", "Drinks", "Soft Drinks",
                 "Hot Drinks", "Alcoholic Drinks"]
-  ALLERGENS = ["Celery", "Cereals containing gluten", "Crustaceans", "Eggs", "Fish", "Lupin", "Milk", "Molluscs",
-               "Mustard", "Tree nuts", "Peanuts", "Sesame seeds", "Soybeans", "Sulphur dioxide and sulphites"]
+  ALLERGENS = ["Celery", "Gluten", "Crustaceans", "Eggs", "Fish", "Lupin", "Milk", "Molluscs",
+               "Mustard", "Tree nuts", "Peanuts", "Sesame", "Soybeans", "Sulphites"]
 
   validates :dish, :description, :category, :price, :allergen, :ingredient, presence: true
   # validates :description, length: { minimum: 300 }
