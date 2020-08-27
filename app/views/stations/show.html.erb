@@ -1,0 +1,14 @@
+<div class="container">
+  <h2>Stations</h2>
+  <% if @stations.count > 0 %>
+    <% @stations.each do |station| %>
+      <p>Name: <%= station.name %></p>
+      <p>Description: <%= station.description  %></p>
+      <hr>
+    <% end %>
+  <% else %>
+    <p>No stations has been created yet.</p>
+  <% end %>
+  <%= link_to "Back", root_path %>
+
+</div>
