@@ -3,8 +3,8 @@ class ItemsController < ApplicationController
   # skip_before_action :authenticate_user!, only: %i[show index]
 
   def show
-    if current_user == (user.chef == true)
-      @items = Items.where(user: user)
+    if current_user.chef
+      @items = Item.where(user: user)
     else
       @items = Item.all
     end
@@ -17,8 +17,9 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.user = current_user
+    @item.allergen = params['item']['allergen'].join(',')
     if @item.save
-      redirect_to item_path(@item), notice: "Item successfully created."
+      redirect_to @item, notice: "Item successfully created."
     else
       render :new
     end
@@ -46,6 +47,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:dish, :description, :category, :price, :allergen)
+    params.require(:item).permit(:dish, :description, :category, :price, {:allergen => []}, :ingredient)
   end
 end
