@@ -5,7 +5,9 @@ class KitchensController < ApplicationController
     @kitchens = Kitchen.where(user_id: current_user.id)
   end
 
-  def show; end
+  def show
+    @reviews = Review.where(kitchen_id: @kitchen.id)
+  end
 
   def new
     @kitchen = Kitchen.new
@@ -15,7 +17,7 @@ class KitchensController < ApplicationController
     @kitchen = Kitchen.new(kitchen_params)
     @kitchen.user = current_user
     if @kitchen.save
-      redirect_to kitechen_path(@kitchen), notice: "kitchen successfully created."
+      redirect_to kitchen_path(@kitchen), notice: "kitchen successfully created."
     else
       render :new
     end
@@ -34,18 +36,16 @@ class KitchensController < ApplicationController
 
   def destroy
     @kitchen.destroy
-    redirect_to kitchen_path, notice: "Booking successfully destroyed."
+    redirect_to kitchens_path, notice: "Booking successfully destroyed."
   end
 
   private
 
   def set_kitchen
     @kitchen = Kitchen.find(params[:id])
-
   end
 
   def kitchen_params
-    params.require(:kitchen).permit(:name, :cuisine, :status?)
+    params.require(:kitchen).permit(:name, :cuisine)
   end
 end
-

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   resources :orders, only: [:destroy]
 
-  resources :kitchen do
+  resources :kitchens do
     resources :reviews, only: [:new, :create]
   end
   resources :reviews, only: [:destroy]
