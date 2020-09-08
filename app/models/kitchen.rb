@@ -2,6 +2,7 @@ class Kitchen < ApplicationRecord
   belongs_to :user
   has_many :items, through: :user
   has_one :booking
+  has_one :photo
 
   # validates :name, :cuisine, presence: true
   # validates :name, :kitchen, presence: true

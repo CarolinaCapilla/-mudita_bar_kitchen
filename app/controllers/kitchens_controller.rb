@@ -17,7 +17,7 @@ class KitchensController < ApplicationController
     @kitchen = Kitchen.new(kitchen_params)
     @kitchen.user = current_user
     if @kitchen.save
-      redirect_to kitchen_path(@kitchen), notice: "kitchen successfully created."
+      redirect_to kitchen_path(@kitchen), notice: "Kitchen successfully created."
     else
       render :new
     end
@@ -28,7 +28,7 @@ class KitchensController < ApplicationController
   def update
     @kitchen.update(kitchen_params)
     if @kitchen.save
-      redirect_to kitchen_path(@kitchen), notice: "your kitchen successfully updated."
+      redirect_to kitchen_path(@kitchen), notice: "Your kitchen was successfully updated."
     else
       render :edit
     end

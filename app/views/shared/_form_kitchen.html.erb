@@ -4,6 +4,7 @@
       <%= simple_form_for @kitchen do |f| %>
         <%= f.input :name %>
         <%= f.input :cuisine %>
+        <%= f.input :photo, as: :file %>
         <%= f.button :submit %>
       <% end %>
     </div>
