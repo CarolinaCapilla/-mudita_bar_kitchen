@@ -3,7 +3,7 @@
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <div class="form-item">
         <h2 class="text-center">New Menu Item</h2>
-        <%= simple_form_for @item do |f| %>
+        <%= simple_form_for [@kitchen, @item] do |f| %>
         <%= f.input :dish %>
         <%= f.input :ingredient %>
         <%= f.input :description %>

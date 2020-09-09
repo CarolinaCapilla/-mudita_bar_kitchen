@@ -11,15 +11,18 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @kitchen = Kitchen.find(params[:kitchen_id])
     @item = Item.new
   end
 
   def create
     @item = Item.new(item_params)
+    @kitchen = Kitchen.find(params[:kitchen_id])
+    @item.kitchen = @kitchen
     @item.user = current_user
     @item.allergen = params['item']['allergen'].join(',')
     if @item.save
-      redirect_to @item, notice: "Item successfully created."
+      redirect_to kitchen_path(@item.kitchen), notice: "Item successfully created."
     else
       render :new
     end
@@ -47,6 +50,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:dish, :description, :category, :price, {:allergen => []}, :ingredient)
+    params.require(:item).permit(:dish, :description, :category, :price, :photo, {:allergen => [] }, :ingredient)
   end
 end
