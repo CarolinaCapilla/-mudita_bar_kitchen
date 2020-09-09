@@ -1,7 +1,7 @@
 class Kitchen < ApplicationRecord
   belongs_to :user
-  has_many :items, through: :user
-  has_one :booking
+  has_many :items, through: :user, dependent: :destroy
+  has_one :booking, dependent: :destroy
   has_one_attached :photo
 
   CUISINE = ['Drinks', 'Grill', 'Healthy', 'Home Made', 'Kids Menu', 'Sharing', 'Sweet Stuff',
