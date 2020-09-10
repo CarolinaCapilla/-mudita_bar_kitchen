@@ -1,8 +1,10 @@
-<% @kitchen.items.each do |item| %>
+<h2><%= @kitchen.name %></h2>
 <div class="card-container">
+<% @kitchen.items.each do |item| %>
 	<div class="card">
 		<div class="imgBox">
-			<img src="https://images.unsplash.com/photo-1506084868230-bb9d95c24759?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80">
+    <%= cl_image_tag("amirali-mirhashemian-jh5XyK4Rr3Y-unsplash_kaa8s0") %>
+			<%# <img src="https://images.unsplash.com/photo-1506084868230-bb9d95c24759?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"> %>
 		</div>
 		<div class="details">
 			<div class="textContent">
@@ -25,8 +27,7 @@
 		</div>
 	</div>
   <% end %>
-
-
+</div>
 
 
 
@@ -50,6 +51,6 @@
         method: :delete,
         data: { confirm: "Are you sure?" } %>
       <%# <% end %>
-  <%# <% end %> %> %> %> %> %> %> %>
+  <%# <% end %>
 
 
