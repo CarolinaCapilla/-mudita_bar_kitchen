@@ -1,1 +1,341 @@
-// Specific CSS for your home-page
+h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 120px;
+  font-weight: lighter;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 10px;
+}
+
+// h1 {
+//   margin-top: 16px;
+//   margin-bottom: 24px;
+//   font-family: Oswald, sans-serif;
+//   font-size: 76px;
+//   line-height: 80px;
+//   font-weight: 700;
+//   text-transform: uppercase;
+// }
+
+h2 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  font-family: Oswald, sans-serif;
+  font-size: 38px;
+  line-height: 48px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h3 {
+  margin-top: 16px;
+  margin-bottom: 12px;
+  font-family: Oswald, sans-serif;
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h4 {
+  margin-top: 8px;
+  margin-bottom: 12px;
+  font-family: Oswald, sans-serif;
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h5 {
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-family: Oswald, sans-serif;
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+h6 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-family: Oswald, sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+p {
+  margin-top: 8px;
+  margin-bottom: 24px;
+  font-size: 15px;
+  line-height: 24px;
+}
+
+
+.header-video {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+#hero_video {
+  position: relative;
+  background-size: cover;
+  color:#fff;
+  width: 100%;
+  font-size:16px;
+  display:table;
+  height:90%;
+  z-index:99;
+  text-align:center;
+}
+
+
+#sub_content{
+  display: table-cell;
+  padding:0 15%;
+  vertical-align: middle;
+  text-align:center;
+  font-size:16px;
+}
+
+.header-video--media {
+  width: 100%;
+  height: auto;
+}
+
+video {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity:0.5;
+}
+
+video {
+  width: 100%;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+#custom-search-input {
+    margin:0;
+    top: 10px;
+    padding: 0;
+    width:1250px;
+    margin:auto;
+    position:relative;
+}
+
+
+.section {
+  position: relative;
+  padding: 120px 56px 112px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.section.pattern-section {
+  background-image: url('pattern_1pattern.jpeg');
+  background-position: 0px 0px;
+  background-size: 16px;
+}
+
+.section.no-bottom-padding {
+  padding-bottom: 0px;
+}
+
+.wrapper {
+  max-width: 1200px;
+  background-color: transparent;
+  text-align: left;
+}
+
+.w-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 940px;
+}
+
+.side-card {
+  position: relative;
+  z-index: 1;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  margin-left: -14.4%;
+  padding: 80px 8%;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+}
+
+.side-card-feature {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-right: 15px;
+  padding-left: 15px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.side-card-image {
+  width: 65.8%;
+  background-color: #e3e3e3;
+}
+
+.side-card-image._1 {
+  background-image: url('rawpixel-com-247358.jpg');
+  background-position: 0px 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.side-card-image._2 {
+  background-image: url('brooke-lark-200721-p-1080.jpg');
+  background-position: 100% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.side-card-header {
+  margin-bottom: 8px;
+}
+
+.side-card-content {
+  position: relative;
+  z-index: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+.divider {
+  width: 70px;
+  height: 4px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border-top: 1px solid #dfa25f;
+  border-bottom: 1px solid #dfa25f;
+}
+
+.grey-text {
+  color: #777;
+}
+
+.frame {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 0;
+  margin: 12px;
+  border: 1px solid #e3e3e3;
+}
+
+.side-card.reversed {
+  margin-right: -14.4%;
+  margin-left: 0%;
+}
+
+.side-card.reversed {
+    margin-right: -16.66%;
+  }
+
+.side-image {
+  width: 39%;
+  margin-right: 15px;
+  margin-left: 15px;
+  background-image: url('brooke-lark-200721-p-1080.jpg');
+}
+
+.side-image-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.side-image-content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 33.33%;
+  margin-right: 8.33%;
+  margin-left: 8.33%;
+  padding: 24px 15px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.sub-header {
+  margin-bottom: -13px;
+  font-family: 'Great Vibes', cursive;
+  color: #dfa25f;
+  font-size: 40px;
+  line-height: 40px;
+}

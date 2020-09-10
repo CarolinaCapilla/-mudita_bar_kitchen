@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 2020_08_25_202528) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "status", default: false
     t.index ["user_id"], name: "index_kitchens_on_user_id"
   end
 
