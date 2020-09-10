@@ -40,7 +40,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
-    redirect_to items_path, notice: "Item successfully destroyed."
+    redirect_to kitchens_path, notice: "Item successfully destroyed."
   end
 
   private
