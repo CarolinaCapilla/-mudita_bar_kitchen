@@ -1,11 +1,13 @@
 class Item < ApplicationRecord
   belongs_to :user
+  belongs_to :kitchen
   has_many :orders, dependent: :destroy
+  has_one_attached :photo
 
-  CATEGORIES = ["Starters", "Mains", "Desserts", "Sharing", "Platters", "Snacks", "Specials", "Drinks", "Soft Drinks",
-                "Hot Drinks", "Alcoholic Drinks"]
-  ALLERGENS = ["Celery", "Gluten", "Crustaceans", "Eggs", "Fish", "Lupin", "Milk", "Molluscs",
-               "Mustard", "Tree nuts", "Peanuts", "Sesame", "Soybeans", "Sulphites"]
+  CATEGORIES = ['Starters', 'Mains', 'Desserts', 'Sharing', 'Platters', 'Snacks', 'Specials', 'Drinks', 'Soft Drinks',
+                'Hot Drinks', 'Alcoholic Drinks']
+  ALLERGENS = ['Celery', 'Gluten', 'Crustaceans', 'Eggs', 'Fish', 'Lupin', 'Milk', 'Molluscs',
+               'Mustard', 'Tree nuts', 'Peanuts', 'Sesame', 'Soybeans', 'Sulphites']
 
   validates :dish, :description, :category, :price, :allergen, presence: true
   # validates :description, length: { minimum: 300 }

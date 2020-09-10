@@ -3,7 +3,8 @@
     <div class="col-md-8">
       <%= simple_form_for @kitchen do |f| %>
         <%= f.input :name %>
-        <%= f.input :cuisine %>
+        <%= f.input :cuisine, collection: Kitchen::CUISINE %>
+        <%= f.input :photo, as: :file %>
         <%= f.button :submit %>
       <% end %>
     </div>

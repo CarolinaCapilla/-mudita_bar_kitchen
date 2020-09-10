@@ -3,13 +3,14 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
 
-  resources :items, except: [:index] do
+  resources :items, except: [:index, :new, :create, :show] do
     resources :orders
   end
   resources :orders, only: [:destroy]
 
   resources :kitchens do
     resources :reviews, only: [:new, :create]
+    resources :items, only: [:new, :create, :show]
   end
   resources :reviews, only: [:destroy]
 

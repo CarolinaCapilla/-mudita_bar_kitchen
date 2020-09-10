@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
   has_many :orders, dependent: :destroy
 
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
   # validates :name, :email, :address, :description, presence: true
   # validates :name, length: { minimum: 2 }
   # validates :name, uniqueness: true
