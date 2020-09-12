@@ -1,0 +1,22 @@
+<div class="container cart-page">
+  <table>
+    <tr>
+      <th>Item</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+    <tr>
+      <div class="cart-info">
+        <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=353&q=80">
+        <div>
+          <p><%= line_item.item.dish %></p>
+          <small>Price: £<%= line_item.item.price %></small>
+          <%= link_to 'Remove', line_items_path(@line_item), method: :delete %>
+        </div>
+      </div>
+      <td><%= line_item.item.dish %></td>
+      <td><input type="number" value="<%= line_item.quantity %>"></td>
+      <td>£<%= line_item.item.price %></td>
+    </tr>
+  </table>
+</div>
