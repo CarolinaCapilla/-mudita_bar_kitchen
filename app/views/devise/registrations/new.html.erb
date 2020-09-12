@@ -6,6 +6,17 @@
         <%= f.error_notification %>
 
         <div class="form-inputs">
+            <%= f.input :name,
+                        input_html: { autocomplete: "name" }%>
+          <% if params[:chef].present? %>
+            <%= f.hidden_field :chef, value: true %>
+            <%= f.input :description,
+                        input_html: { autocomplete: "description" }%>
+          <% end %>
+          <% if !params[:chef].present? %>
+          <%= f.input :address,
+                      input_html: { autocomplete: "address" }%>
+          <% end %>
           <%= f.input :email,
                       required: true,
                       autofocus: true,
