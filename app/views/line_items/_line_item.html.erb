@@ -1,22 +1,44 @@
 <div class="container cart-page">
-  <table>
+  <table class="cart-table">
     <tr>
-      <th>Item</th>
-      <th>Quantity</th>
-      <th>Price</th>
+      <th class="cart-text">Item</th>
+      <th class="cart-text">Quantity</th>
+      <th class="cart-text text-right">Subtotal</th>
     </tr>
     <tr>
-      <div class="cart-info">
-        <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=353&q=80">
-        <div>
-          <p><%= line_item.item.dish %></p>
-          <small>Price: £<%= line_item.item.price %></small>
-          <%= link_to 'Remove', line_items_path(@line_item), method: :delete %>
+      <td class="item-data">
+        <div class="cart-info">
+          <img class="img-cart" src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=353&q=80">
+          <%# will replace for cl_image_tag %>
+          <div>
+            <p class="item-tag"><%= line_item.item.dish.capitalize %></p>
+            <small>Price: £<%= line_item.item.price %></small>
+            <br>
+            <%= link_to 'Remove', line_item, method: :delete %>
+          </div>
         </div>
-      </div>
-      <td><%= line_item.item.dish %></td>
-      <td><input type="number" value="<%= line_item.quantity %>"></td>
-      <td>£<%= line_item.item.price %></td>
+      </td>
+      <td class="item-data"><input type="number" value="<%= line_item.quantity %>"></td>
+      <td class="item-data">£<%= line_item.total_price %></td>
     </tr>
   </table>
+
+  <div class="total-price">
+    <table class="total-table">
+      <tr>
+        <td class="item-data">Subtotal</td>
+        <td class="item-data">£<%= @cart.total_price %></td>
+      </tr>
+      <tr>
+        <td class="item-data">VAT</td>
+        <td class="item-data">£<%= (line_item.total_price * 20) / 100 %></td>
+      </tr>
+        <tr>
+        <td class="item-data">Total</td>
+        <td class="item-data">£<%= @cart.total_price %></td>
+      </tr>
+    </table>
+  </div>
 </div>
+
+

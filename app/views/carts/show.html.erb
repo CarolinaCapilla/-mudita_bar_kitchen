@@ -1,25 +1,16 @@
-<%# <p id="notice"><%= notice %></p> %>
-
-
-
-<%= link_to 'Keep Shopping', item_path, class: 'button is-warning' %>
+<div class="container mt-3">
+  <%= link_to 'Keep Shopping', kitchens_path, class: 'btn btn-primary' %>
+</div>
 
 
 
   <%= render(@cart.line_items) %>
 
-  <div class="columns">
-    <div class="column">
-      <%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "button is-danger" %>
-    </div>
-    <div class="column total has-text-right">
-      <h4 class="title is-4">
-        <span class="f5 has-text-grey">Total:</span> <%= number_to_currency(@cart.total_price) %>
-      </h4>
-    </div>
+  <div class="container">
+    <%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "btn btn-primary" %>
+    <%= link_to 'Edit', edit_cart_path(@cart) %> |
+    <%= link_to 'Back', carts_path %>
   </div>
 
 
 
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
