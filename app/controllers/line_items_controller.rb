@@ -20,6 +20,7 @@ class LineItemsController < ApplicationController
     set_cart
     item = Item.find(params[:item_id])
     @line_item = @cart.add_item(item)
+    raise
     if @line_item.save
       redirect_to cart_path(@cart), alert: 'Item added to cart.'
     else
