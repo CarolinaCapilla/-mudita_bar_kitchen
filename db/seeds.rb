@@ -37,9 +37,3 @@ puts 'Finished'
 
 
 
-
-
-
-
-
-
