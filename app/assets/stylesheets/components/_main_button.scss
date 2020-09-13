@@ -3,8 +3,16 @@
   padding: 12px 32px;
   border-radius: 24px;
   background-color: #dfa25f;
+  -webkit-transition: background-color 200ms ease;
+  transition: background-color 200ms ease;
   color: #fff;
   font-size: 15px;
   line-height: 24px;
   font-weight: 400;
+}
+
+.main-button:hover {
+  background-color: #232d41;
+  color: #fff;
+  text-decoration: none;
 }
