@@ -31,16 +31,16 @@ class User < ApplicationRecord
   end
 
   private
-  
+
   def add_default_avatar
     unless avatar.attached?
       avatar.attach(
-       io: File.open(
-         Rails.root.join(
-           'app', 'assets', 'images', 'chief-photo.jpg'
-         )
-       ), filename: 'chief-photo.jpg',
-       content_type: 'image/jpg'
+        io: File.open(
+          Rails.root.join(
+            'app', 'assets', 'images', 'chief-photo.jpg'
+          )
+        ), filename: 'chief-photo.jpg',
+        content_type: 'image/jpg'
       )
     end
   end
