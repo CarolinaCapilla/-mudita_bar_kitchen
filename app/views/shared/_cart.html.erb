@@ -1,0 +1,9 @@
+<% if cart_has_items %>
+  <button class="btn btn-light"><%= link_to cart_path(@cart) do %>
+    <h6><span class="badge badge-light">
+      <i class="fa fa-shopping-cart"> Cart</i>
+      <span class="badge badge-dark"><%= cart_count_over_one %></span>
+    </h6>
+  </button>
+  <% end %>
+<% end %>

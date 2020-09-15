@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :line_items
+  resources :carts
   devise_for :users
   root to: 'pages#home'
 
@@ -15,6 +17,7 @@ Rails.application.routes.draw do
   resources :reviews, only: [:destroy]
 
   resources :stations do
-    resources :bookings
+    resources :bookings, only: [:new, :index, :create, :show]
   end
+  resources :bookings, only: [:destroy]
 end

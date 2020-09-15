@@ -11,7 +11,7 @@ class StationsController < ApplicationController
     @station = Station.new(station_params)
     # @station.user = current_user
     if @station.save
-      redirect_to station_path(@station), notice: "Station successfully created."
+      redirect_to station_path(@station), alert: "Station successfully created."
     else
       render :new
     end
@@ -25,7 +25,7 @@ class StationsController < ApplicationController
 
   # def update
   #   if @station.update(station_params)
-  #     redirect_to @station, notice: "Station successfully updated."
+  #     redirect_to @station, alert: "Station successfully updated."
   #   else
   #     render :edit
   #   end
@@ -33,10 +33,11 @@ class StationsController < ApplicationController
 
   # def destroy
   #   @station.destroy
-  #   redirect_to station_path, notice: "Station successfully destroyed."
+  #   redirect_to station_path, alert: "Station successfully destroyed."
   # end
 
   private
+
   def station_params
     params.require(:station).permit(:available, :name, :description)
   end

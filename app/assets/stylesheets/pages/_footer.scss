@@ -1,0 +1,51 @@
+.footer {
+  background: url("https://res.cloudinary.com/dc8t19jnn/image/upload/v1599915117/bg-pattern_u31nla.jpg");
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.3);
+  background-position: 0px 0px;
+  background-size: 16px;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: white;
+  opacity: 0.75;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-heart {
+  color: #D23333;
+}
+
+.footer-copyright {
+  color: white;
+  opacity: 0.75;
+  font-size: 24px;
+  padding: 0px 10px;
+  text-decoration: none;
+}
+
+.btn-ghost {
+  color: white;
+  border: 1px solid white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.75;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  color: white;
+  opacity: 0.95;
+}
