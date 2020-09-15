@@ -16,11 +16,6 @@
           <% if !params[:chef].present? %>
           <%= f.input :address,
                       input_html: { autocomplete: "address" }%>
-          <% if resource.avatar.attached? %>
-          <%= image_tag(resource.avatar) %>
-          <% else %>
-          <%= image_tag "https://res.cloudinary.com/dc8t19jnn/image/upload/v1599762816/LogoMakr_04z4SS_jywgoa.png" %>
-          <% end %>
           <%= f.input :avatar, as: :file %>
           <% end %>
           <%= f.input :email,

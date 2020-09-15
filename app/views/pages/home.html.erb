@@ -76,7 +76,11 @@
         <p data-w-id="0fc02ec2-4ac0-917f-5189-31a0e1b8cbf9" style="opacity:0" class="paragraph-big intro-text">Fish is one of the most wholesome foods that man can eat. In fact, people have been eating fish throughout human history. These days, many cooks yearn to add fish to their repertoire, but the whole process of cleaning and filleting fresh fish is a little scary to them. The process of cleaning and filleting fresh fish is <a href="blog.html" class="text-link">relatively simple</a> once the steps are understood.  To begin, you must clean your fresh fish properly in order to maintain it’s quality.</p>
       </div><a href="about.html" data-ix="fade-up-4" data-w-id="b1272952-955b-1e16-552f-44627bc6069d" style="opacity:0" class="button w-button">More About Us</a></div>
 </section> -->
-<%= image_tag(current_user.avatar_thumbnail) %>
+<div class="avatar-large">
+  <% if user_signed_in? %>
+  <%= image_tag(current_user.avatar_thumbnail) %>
+  <% end %>
+</div>
 <div class="footer">
   <div class="footer-links">
     <a href="#"><i class="fab fa-instagram"></i></a>
