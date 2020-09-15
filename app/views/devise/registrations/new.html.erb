@@ -6,8 +6,10 @@
         <%= f.error_notification %>
 
         <div class="form-inputs">
-            <%= f.input :name,
-                        input_html: { autocomplete: "name" }%>
+            <%= f.input :first_name,
+                        input_html: { autocomplete: "first_name" }%>
+            <%= f.input :last_name,
+                        input_html: { autocomplete: "last_name" }%>
           <% if params[:chef].present? %>
             <%= f.hidden_field :chef, value: true %>
             <%= f.input :description,
