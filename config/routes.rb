@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   resources :carts
   devise_for :users
   root to: 'pages#home'
-
+  
+  resources :users
 
   resources :items, except: [:index, :new, :create, :show] do
     resources :orders
