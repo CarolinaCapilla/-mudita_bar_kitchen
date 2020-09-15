@@ -26,7 +26,7 @@ class User < ApplicationRecord
     if avatar.attached?
       avatar.variant(resize: '200x200')
     else
-      "https://res.cloudinary.com/dc8t19jnn/image/upload/v1599762816/LogoMakr_04z4SS_jywgoa.png"
+      'https://res.cloudinary.com/dc8t19jnn/image/upload/v1599762816/LogoMakr_04z4SS_jywgoa.png'
     end
   end
 
