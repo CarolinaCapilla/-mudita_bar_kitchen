@@ -26,6 +26,7 @@ class BookingsController < ApplicationController
     @station = Station.find(params[:station_id])
     @booking.station = @station
     @booking.user = current_user
+    @booking.calculate_price
     if @booking.save
       redirect_to station_bookings_path(@booking.station), notice: "Booking successfully created."
     else
@@ -45,6 +46,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:date, :kitchen_id, :price)
+    params.require(:booking).permit(:date, :kitchen_id, :period)
   end
 end
