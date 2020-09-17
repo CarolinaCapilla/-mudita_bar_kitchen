@@ -18,6 +18,7 @@
           <% if !params[:chef].present? %>
           <%= f.input :address,
                       input_html: { autocomplete: "address" }%>
+          <%= f.input :avatar, as: :file %>
           <% end %>
           <%= f.input :email,
                       required: true,
