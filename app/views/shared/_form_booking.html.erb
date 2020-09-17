@@ -3,7 +3,7 @@
     <div class="col-md-8">
       <%= simple_form_for [@station, @booking] do |f| %>
         <%= f.input :date %>
-        <%= f.input :price %>
+        <%= f.input :period, collection: ["breakfast", "lunch", "dinner"] %>
         <%= f.select :kitchen_id, current_user.kitchens.map { |kitchen| [kitchen.name, kitchen.id] } %>
         <%= f.button :submit, class: 'btn btn-primary' %>
       <% end %>

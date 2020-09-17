@@ -10,11 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2020_09_12_095807) do
-=======
-ActiveRecord::Schema.define(version: 2020_09_12_105601) do
->>>>>>> 966228ae7a3aec4565041b8dc7f9d7e2fc44e5d3
+
+ActiveRecord::Schema.define(version: 2020_09_15_210807) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +46,7 @@ ActiveRecord::Schema.define(version: 2020_09_12_105601) do
     t.datetime "updated_at", precision: 6, null: false
     t.date "date"
     t.bigint "kitchen_id", null: false
+    t.string "period"
     t.index ["kitchen_id"], name: "index_bookings_on_kitchen_id"
     t.index ["station_id"], name: "index_bookings_on_station_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
