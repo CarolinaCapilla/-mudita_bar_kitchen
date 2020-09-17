@@ -10,4 +10,5 @@ class Kitchen < ApplicationRecord
   validates :name, :cuisine, presence: true
   validates :name, uniqueness: true
   validates :cuisine, inclusion: { in: CUISINE }
+
 end
