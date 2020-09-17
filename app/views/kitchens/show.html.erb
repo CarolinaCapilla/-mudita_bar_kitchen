@@ -28,6 +28,65 @@
   <% end %>
 </div>
 
+<div class="section">
+  <div class="wrapper w-container">
+    <div class="section-header-wrapper">
+      <div class="sub-header">Menu</div>
+      <h2>Breakfast</h2>
+      <div class="divider"></div>
+    </div>
+      <div class="menu-grid-item">
+          <% @kitchen.items.each do |item| %>
+          <div class="menu-grid-card">
+            <div class=menu-grid-image>
+              <%= cl_image_tag item.photo.key %>
+            </div>
+            <div class="menu-info w-clearfix">
+              <div class="menu-info-main">
+                <div class="menu-name"><%= item.dish %></div>
+                <div class="menu-dots-line"></div>
+                <div class="menu-price">
+                  <div>£</div>
+                  <div><%= item.price %></div>
+                </div>
+              </div>
+              <div class="menu-ingredients">
+                <%= item.description %>
+              </div>
+              <div class="menu-more w-clearfix">
+                <div class="badge menu-new-badge"></div>
+                <a href="#" class="badge menu-item-tooltip w-inline-block">
+                  <div class="tooltip">
+                    <div>Vegan</div>
+                    <div class="tooltip-arrow"></div>
+                  </div>
+                  <div>V</div>
+                </a>
+                <a href="#" class="badge menu-item-tooltip w-inline-block">
+                  <div class="tooltip">
+                    <div>Kosher</div>
+                    <div class="tooltip-arrow"></div>
+                  </div>
+                  <div>K</div>
+                </a>
+                <a href="#" class="badge menu-item-tooltip w-inline-block">
+                  <div class="tooltip">
+                    <div>Spicy</div>
+                    <div class="tooltip-arrow"></div>
+                  </div>
+                  <div>S</div>
+                </a>
+              </div>
+            </div>
+            </div>
+          <% end %>
+      </div>
+      <div class="w-dyn-empty">
+        <div>No items found.</div>
+      </div>
+  </div>
+</div>
+
 
   <div class="ml-4">
     <% if current_user == @kitchen.user %>
