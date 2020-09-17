@@ -14,11 +14,11 @@
             <%= f.hidden_field :chef, value: true %>
             <%= f.input :description,
                         input_html: { autocomplete: "description" }%>
+            <%= f.input :avatar, as: :file %>
           <% end %>
           <% if !params[:chef].present? %>
           <%= f.input :address,
                       input_html: { autocomplete: "address" }%>
-          <%= f.input :avatar, as: :file %>
           <% end %>
           <%= f.input :email,
                       required: true,
