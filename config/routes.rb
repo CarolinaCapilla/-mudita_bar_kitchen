@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   resources :line_items
-  resources :carts
   devise_for :users
   root to: 'pages#home'
 
 
-  resources :items, except: [:index, :new, :create, :show] do
+  resources :items, except: [:index, :new, :create, :show]
+  resources :carts do
     resources :orders
   end
   resources :orders, only: [:destroy]
