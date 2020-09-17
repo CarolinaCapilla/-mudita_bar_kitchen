@@ -1,0 +1,14 @@
+<div class="container mt-3">
+  <%= link_to 'Keep Shopping', kitchens_path, class: 'btn btn-primary' %>
+</div>
+
+
+
+  <%= render(@cart.line_items) %>
+
+  <div class="container">
+    <%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "btn btn-primary" %>
+  </div>
+
+
+

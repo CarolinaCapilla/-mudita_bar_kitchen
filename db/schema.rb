@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_09_12_095807) do
+=======
+ActiveRecord::Schema.define(version: 2020_09_12_105601) do
+>>>>>>> 966228ae7a3aec4565041b8dc7f9d7e2fc44e5d3
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +82,16 @@ ActiveRecord::Schema.define(version: 2020_09_12_095807) do
     t.index ["user_id"], name: "index_kitchens_on_user_id"
   end
 
+  create_table "line_items", force: :cascade do |t|
+    t.bigint "item_id", null: false
+    t.bigint "cart_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "quantity", default: 1
+    t.index ["cart_id"], name: "index_line_items_on_cart_id"
+    t.index ["item_id"], name: "index_line_items_on_item_id"
+  end
+
   create_table "orders", force: :cascade do |t|
     t.string "status", default: "Pending"
     t.string "delivery_address"
@@ -132,6 +146,8 @@ ActiveRecord::Schema.define(version: 2020_09_12_095807) do
   add_foreign_key "items", "kitchens"
   add_foreign_key "items", "users"
   add_foreign_key "kitchens", "users"
+  add_foreign_key "line_items", "carts"
+  add_foreign_key "line_items", "items"
   add_foreign_key "orders", "items"
   add_foreign_key "orders", "users"
   add_foreign_key "reviews", "kitchens"
