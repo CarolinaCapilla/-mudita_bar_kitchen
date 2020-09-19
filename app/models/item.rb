@@ -6,6 +6,8 @@ class Item < ApplicationRecord
   has_one_attached :photo
   has_many :line_items
 
+  scope :starters, -> { where(category: "Starters") }
+
   CATEGORIES = ['Starters', 'Mains', 'Desserts', 'Sharing', 'Platters', 'Snacks', 'Specials', 'Drinks', 'Soft Drinks',
                 'Hot Drinks', 'Alcoholic Drinks']
   ALLERGENS = ['Celery', 'Gluten', 'Crustaceans', 'Eggs', 'Fish', 'Lupin', 'Milk', 'Molluscs',
@@ -25,3 +27,5 @@ class Item < ApplicationRecord
     end
   end
 end
+
+

@@ -1,19 +1,25 @@
+<div class="bg-section-kitchen page-hero-section menu-hero">
+  <div class="wrapper w-container">
+    <h1 class="page-hero-header">The Menu</h1>
+  </div>
+</div>
+
 <div class="section pattern-section">
   <div class="wrapper w-container">
-    <div class="blog-posts"></div>
-    <div class="blog-posts w-dyn-list">
+    <div class="kitchen-cards"></div>
+    <div class="kitchen-cards w-dyn-list">
       <div role="list" class="w-dyn-items">
         <div role="listitem" class="w-dyn-item">
           <% @kitchens.each do |kitchen| %>
-          <div class="post-card">
-            <div class="post-card-info">
-              <div class="post-card-content"><a href="" class="badge post-card-category"></a>
-                <a href="" class="post-card-header-link w-inline-block">
+          <div class="kitchen-card">
+            <div class="kitchen-card-info">
+              <div class="kitchen-card-content"><a href="" class="badge kitchen-card-category"></a>
+                <a href="" class="kitchen-card-header-link w-inline-block">
                 <h3><%= kitchen.name %></h3>
                 </a>
                 <div class="divider"></div>
                 <p class="grey-text">fdsfdsfdsfds</p>
-                <div class="post-card-date"><%= kitchen.cuisine %></div>
+                <div class="kitchen-card-date"><%= kitchen.cuisine %></div>
                 <div>
                 <%= link_to "Explore Kitchen", kitchen_path(kitchen), class: "main-button" %>
                 </div>
@@ -21,7 +27,7 @@
               <div class="frame"></div>
             </div>
             <% if kitchen.photo.attached? %>
-            <div class="post-card-image w-inline-block">
+            <div class="kitchen-card-image w-inline-block">
             <%= cl_image_tag kitchen.photo.key %>
             </div>
             <% end %>
@@ -32,4 +38,5 @@
     </div>
   </div>
 </div>
+
 
