@@ -40,8 +40,26 @@
 }
 
 .bg-section-kitchen.page-hero-section.menu-hero {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(17, 17, 17, 0.5)), to(rgba(17, 17, 17, 0.5))), url('https://res.cloudinary.com/dc8t19jnn/image/upload/v1599760723/rawpixel-com-247358_ua5mei.jpg');
-  background-image: linear-gradient(180deg, rgba(17, 17, 17, 0.5), rgba(17, 17, 17, 0.5)), url('https://res.cloudinary.com/dc8t19jnn/image/upload/v1599760723/rawpixel-com-247358_ua5mei.jpg');
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(17, 17, 17, 0.8)), to(rgba(17, 17, 17, 0.8))), url('https://res.cloudinary.com/dc8t19jnn/image/upload/v1599760723/rawpixel-com-247358_ua5mei.jpg');
+  background-image: linear-gradient(180deg, rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8)), url('https://res.cloudinary.com/dc8t19jnn/image/upload/v1599760723/rawpixel-com-247358_ua5mei.jpg');
+  background-position: 0px 0px, 50% 50%;
+  background-size: auto, cover;
+  background-repeat: repeat, no-repeat;
+  background-attachment: scroll, scroll;
+}
+
+.bg-section-kitchen.page-hero-section.create-kitchen-hero {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(17, 17, 17, 0.8)), to(rgba(17, 17, 17, 0.8))), url('https://res.cloudinary.com/dc8t19jnn/image/upload/v1600545545/wyron-a-Lhb1DyyNr7U-unsplash_xyrrhi.jpg');
+  background-image: linear-gradient(180deg, rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8)), url('https://res.cloudinary.com/dc8t19jnn/image/upload/v1600545545/wyron-a-Lhb1DyyNr7U-unsplash_xyrrhi.jpg');
+  background-position: 0px 0px, 50% 50%;
+  background-size: auto, cover;
+  background-repeat: repeat, no-repeat;
+  background-attachment: scroll, scroll;
+}
+
+.bg-section-kitchen.page-hero-section.create-item-hero {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(17, 17, 17, 0.8)), to(rgba(17, 17, 17, 0.8))), url('https://res.cloudinary.com/dc8t19jnn/image/upload/v1600550321/jorge-zapata-4nXkhLCrkLo-unsplash_dvmebi.jpg');
+  background-image: linear-gradient(180deg, rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8)), url('https://res.cloudinary.com/dc8t19jnn/image/upload/v1600550321/jorge-zapata-4nXkhLCrkLo-unsplash_dvmebi.jpg');
   background-position: 0px 0px, 50% 50%;
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;
@@ -54,9 +72,9 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  max-width: 570px;
+  max-width: 1070px;
   margin-right: auto;
-  margin-bottom: 40px;
+  margin-bottom: 0px;
   margin-left: auto;
   padding-bottom: 16px;
   -webkit-box-orient: vertical;

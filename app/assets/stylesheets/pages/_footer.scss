@@ -1,14 +1,18 @@
 .footer {
-  background: url("https://res.cloudinary.com/dc8t19jnn/image/upload/v1599915117/bg-pattern_u31nla.jpg");
+  background-image: url('https://res.cloudinary.com/dc8t19jnn/image/upload/v1599915117/bg-pattern_u31nla.jpg');
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100px;
   padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
+  position: relative;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #232d41;
   background-position: 0px 0px;
-  background-size: 16px;
+  border: 12px solid #fff;
 }
+
 .footer-links {
   display: flex;
   align-items: center;
@@ -47,5 +51,5 @@
 
 .btn-ghost:hover {
   color: white;
-  opacity: 0.95;
+  opacity: 1;
 }
