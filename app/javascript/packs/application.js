@@ -24,9 +24,13 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+
+import 'sweetalert2/src/sweetalert2.scss'
 
 // Internal imports, e.g:
 import { allergenToggle } from '../components/allergen_choices'
+import { paymentButtonPopOut } from '../components/payment_modal'
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
@@ -35,6 +39,7 @@ document.addEventListener('turbolinks:load', () => {
 
   allergenToggle();
 });
+paymentButtonPopOut();
 
 
 

@@ -1,3 +1,5 @@
 <% @line_items.each do |line_item| %>
   <%= line_item.item.dish %>: <%= line_item.quantity %>: <%= line_item.item.price %>
 <% end %>
+
+<button class="payment-modal">Pay</button>
