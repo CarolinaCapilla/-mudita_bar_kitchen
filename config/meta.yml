@@ -1,5 +1,5 @@
 meta_product_name: "The Menu"
 meta_title: "The Menu - Empowering chefs and bartenders providing them with a platform to showcase their skills"
 meta_description: "Relevant description"
-meta_image: "cover.jpg" # should exist in `app/assets/images/`
+meta_image: "cover_1200x630.jpg" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards
