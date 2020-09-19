@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
 
   has_many :orders, dependent: :destroy
+  # has_many :carts, dependent: :destroy
   has_one_attached :avatar
   after_commit :add_default_avatar, on: %i[create update]
 
@@ -22,13 +23,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  # def avatar_thumbnail
-  #   if avatar.attached?
-  #     avatar.variant(resize: '50x50')
-  #   else
-  #     'https://res.cloudinary.com/dc8t19jnn/image/upload/v1599762816/LogoMakr_04z4SS_jywgoa.png'
-  #   end
-  # end
+  def avatar_thumbnail
+    if avatar.attached?
+      avatar.variant(resize: '50x50')
+    else
+      'https://res.cloudinary.com/dc8t19jnn/image/upload/v1599762816/LogoMakr_04z4SS_jywgoa.png'
+    end
+  end
 
   def is_valid_postcode?(postcode)
     !!(postcode =~ /^\s*((GIR\s*0AA)|((([A-PR-UWYZ][0-9]{1,2})|(([A-PR-UWYZ][A-HK-Y][0-9]{1,2})|(([A-PR-UWYZ][0-9][A-HJKSTUW])|([A-PR-UWYZ][A-HK-Y][0-9][ABEHMNPRVWXY]))))\s*[0-9][ABD-HJLNP-UW-Z]{2}))\s*$/i)
