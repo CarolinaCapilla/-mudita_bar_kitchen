@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
 
   has_many :orders, dependent: :destroy
+  # has_many :carts, dependent: :destroy
   has_one_attached :avatar
   after_commit :add_default_avatar, on: %i[create update]
 
