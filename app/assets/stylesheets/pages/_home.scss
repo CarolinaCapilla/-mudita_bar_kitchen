@@ -453,6 +453,7 @@ video {
   line-height: 28px;
 }
 
+
 .paragraph-big {
   font-size: 17px;
   line-height: 28px;
@@ -472,3 +473,17 @@ video {
   -webkit-column-gap: 2em;
   column-gap: 2em;
 }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color:#f5f5f5;}
+

@@ -1,14 +1,61 @@
 <div class="container mt-3">
   <%= link_to 'Keep Shopping', kitchens_path, class: 'btn btn-primary' %>
+  <%= link_to 'Checkout', cart_orders_path(@cart), method: :post, class: 'btn btn-primary' %>
 </div>
 
 
 
-  <%= render(@cart.line_items) %>
+  <%#= render(@cart.line_items) %>
 
-  <div class="container">
-    <%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "btn btn-primary" %>
+<div class="container cart-page">
+  <table class="cart-table">
+    <tr>
+      <th class="cart-text">Items</th>
+      <th class="cart-text">Quantity</th>
+      <th class="cart-text text-right">Subtotal</th>
+    </tr>
+    <% @cart.line_items.each do |line_item| %>
+      <tr>
+        <td class="item-data">
+          <div class="cart-info">
+            <% if line_item.item.photo.attached? %>
+              <%= cl_image_tag line_item.item.photo.key, class: "img-cart" %>
+            <% end %>
+            <div>
+              <p class="item-tag"><%= line_item.item.dish.capitalize %></p>
+              <small>Price: £<%= line_item.item.price %></small>
+              <br>
+              <%= link_to 'Remove', line_item, method: :delete %>
+            </div>
+          </div>
+        </td>
+        <td class="item-data"><input type="number" value="<%= line_item.quantity %>"></td>
+        <td class="item-data">£<%= line_item.total_price %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <div class="total-price">
+    <table class="total-table">
+      <tr>
+        <td class="item-data">Subtotal</td>
+        <td class="item-data">£<%= @cart.total_price %></td>
+      </tr>
+      <tr>
+        <td class="item-data">VAT</td>
+        <td class="item-data">£<%=  total = (@cart.total_price * 20) / 100 %></td>
+      </tr>
+        <tr>
+        <td class="item-data">Total</td>
+        <td class="item-data">£<%= total + @cart.total_price %></td>
+      </tr>
+    </table>
   </div>
+</div>
+
+<div class="container">
+  <%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "btn btn-primary" %>
+</div>
 
 
 

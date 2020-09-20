@@ -1,4 +1,4 @@
-<div class="container cart-page">
+<!-- <div class="container cart-page">
   <table class="cart-table">
     <tr>
       <th class="cart-text">Item</th>
@@ -8,13 +8,14 @@
     <tr>
       <td class="item-data">
         <div class="cart-info">
-          <img class="img-cart" src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=353&q=80">
-          <%# will replace for cl_image_tag %>
+          <#% if line_item.item.photo.attached? %>
+            <%#= cl_image_tag line_item.item.photo.key, class: "img-cart" %>
+          <%# end %>
           <div>
             <p class="item-tag"><%= line_item.item.dish.capitalize %></p>
             <small>Price: £<%= line_item.item.price %></small>
             <br>
-            <%= link_to 'Remove', line_item, method: :delete %>
+            <%#= link_to 'Remove', line_item, method: :delete %>
           </div>
         </div>
       </td>
@@ -30,8 +31,7 @@
         <td class="item-data">£<%= @cart.total_price %></td>
       </tr>
       <tr>
-        <td class="item-data">VAT</td>
-        <td class="item-data">£<%= (line_item.total_price * 20) / 100 %></td>
+
       </tr>
         <tr>
         <td class="item-data">Total</td>
@@ -42,3 +42,4 @@
 </div>
 
 
+ -->

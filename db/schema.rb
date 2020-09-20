@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_15_210807) do
+ActiveRecord::Schema.define(version: 2020_09_19_100056) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -96,6 +96,8 @@ ActiveRecord::Schema.define(version: 2020_09_15_210807) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
     t.bigint "item_id", null: false
+    t.bigint "cart_id"
+    t.index ["cart_id"], name: "index_orders_on_cart_id"
     t.index ["item_id"], name: "index_orders_on_item_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
@@ -128,10 +130,12 @@ ActiveRecord::Schema.define(version: 2020_09_15_210807) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
-    t.string "address"
     t.text "description"
     t.boolean "chef", default: false
     t.boolean "chef_status", default: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "address", default: "138 Kingsland Road"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -145,6 +149,7 @@ ActiveRecord::Schema.define(version: 2020_09_15_210807) do
   add_foreign_key "kitchens", "users"
   add_foreign_key "line_items", "carts"
   add_foreign_key "line_items", "items"
+  add_foreign_key "orders", "carts"
   add_foreign_key "orders", "items"
   add_foreign_key "orders", "users"
   add_foreign_key "reviews", "kitchens"
