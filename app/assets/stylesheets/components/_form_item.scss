@@ -1,13 +1,13 @@
 .form-item {
   background: white;
-  margin-top: 50px;
+  margin-top: 0px;
   padding: 20px;
   border-radius: 5px;
   h2 {
     text-align: center;
     font-weight: bold;
     font-size: 25px;
-    color: #666666;
+    color: #000;
     margin-bottom: 50px;
     margin-top: 0px;
   }
@@ -33,7 +33,7 @@
 .category-choice {
   background: #b7b7b7;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 25px;
   opacity: .4;
   flex: 0 0 47%;
   text-align: center;
@@ -42,7 +42,7 @@
     cursor: pointer;
   }
   &.active {
-  background: #40a8c4;
+  background: #232d41;
   color: white;
   opacity: 1;
   }
