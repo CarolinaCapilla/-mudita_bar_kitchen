@@ -1,10 +1,17 @@
-.blog-posts {
+.pattern-section {
+  background-image: url('https://res.cloudinary.com/dc8t19jnn/image/upload/v1599760700/pattern_1pattern_hj8vrx.jpg');
+  background-position: 0px 0px;
+  background-size: 16px;
+}
+
+
+.kitchen-cards {
   margin-bottom: -40px;
   padding-right: 15px;
   padding-left: 15px;
 }
 
-.post-card {
+.kitchen-card {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -21,7 +28,7 @@
   text-decoration: none;
 }
 
-.post-card-info {
+.kitchen-card-info {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -40,7 +47,7 @@
   align-items: center;
 }
 
-.post-card-content {
+.kitchen-card-content {
   position: relative;
   z-index: 1;
   display: -webkit-box;
@@ -83,7 +90,15 @@
   margin-bottom: 2px;
 }
 
-.post-card-header-link {
+.badge.menu-new-badge {
+  margin-top: 4px;
+  margin-right: 6px;
+  margin-bottom: 4px;
+  float: left;
+  background-color: #f03e5a;
+}
+
+.kitchen-card-header-link {
   color: #111;
   text-decoration: none;
 }
@@ -93,13 +108,13 @@
   display: inline-block;
 }
 
-.post-card-date {
+.kitchen-card-cuisine {
   margin-top: -8px;
-  color: #bbb;
+  color: #000;
   margin-bottom: 40px;
 }
 
-.post-card-image {
+.kitchen-card-image {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -122,9 +137,11 @@
   background-color: #e3e3e3;
   background-repeat: no-repeat;
   text-decoration: none;
-  background-position: 50% 50%;
-  background-position: contain;
+  background-size: contain;
+  background-position: center center;
+  max-height: 460px;
 }
+
 
 .white-button {
   background-color: #fff;

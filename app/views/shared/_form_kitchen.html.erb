@@ -1,12 +1,27 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <%= simple_form_for @kitchen do |f| %>
-        <%= f.input :name %>
-        <%= f.input :cuisine, collection: Kitchen::CUISINE %>
-        <%= f.input :photo, as: :file %>
-        <%= f.button :submit, class: 'btn btn-primary' %>
-      <% end %>
+<div class="bg-section-kitchen page-hero-section create-kitchen-hero">
+  <div class="wrapper w-container">
+    <h1 class="page-hero-header">Your Kitchen</h1>
+  </div>
+</div>
+
+<div class="section pattern-section no-top-padding">
+  <div class="wrapper w-container">
+    <div class="reservation w-form">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-12">
+            <div class="form-item">
+            <h2 class="text-center">Your details</h2>
+            <%= simple_form_for @kitchen do |f| %>
+              <%= f.input :name %>
+              <%= f.input :cuisine, collection: Kitchen::CUISINE %>
+              <%= f.input :photo, as: :file %>
+              <%= f.button :submit, class: 'main-button' %>
+            <% end %>
+          </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
