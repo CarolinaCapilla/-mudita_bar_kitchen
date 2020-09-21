@@ -11,9 +11,12 @@
                 <li>Dish: <%= line_item.item.dish %></li>
                 <li>Quantity: <%= line_item.quantity %></li>
                 <li>Item price: £<%= line_item.item.price %></li>
-                <li>VAT: £<%=  total = (@cart.total_price * 20) / 100 %></li>
-                <li>Total price with VAT: £<%= total + @cart.total_price %></li>
               <% end %>
+              <br>
+
+                Subtotal: £<%= @cart.total_price %>
+                <p>Total VAT: £<%=  total = (@cart.total_price * 20) / 100 %></p>
+                Total price with VAT: £<%= total + @cart.total_price %>
             </ul>
             <%= current_user.first_name %>
             <%= current_user.last_name %>
