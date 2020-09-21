@@ -21,6 +21,7 @@ class LineItemsController < ApplicationController
     set_cart
     item = Item.find(params[:item_id])
     @line_item = @cart.add_item(item)
+    @line_item.cart = @cart
     if @line_item.save
       redirect_to cart_path(@cart), alert: 'Item added to cart.'
     else
@@ -49,6 +50,7 @@ class LineItemsController < ApplicationController
   end
 
   def line_item_params
-    params.require(:line_item).permit(:item_id)
+    params.require(:line_item).permit(:item_id, :cart_id)
   end
+
 end

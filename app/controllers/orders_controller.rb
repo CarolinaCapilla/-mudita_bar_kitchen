@@ -32,7 +32,9 @@ before_action :set_order, only: %i[show edit update destroy]
     @order.destroy
     redirect_to carts_path, notice: "order successfully destroyed."
   end
+
   private
+
   def set_order
     @order = Order.find(params[:id])
   end
