@@ -14,6 +14,8 @@
               <% end %>
               <br>
 
+                Total quantity: <%= @line_items.map(&:quantity).sum %>
+                <br>
                 Subtotal: £<%= @cart.total_price %>
                 <p>Total VAT: £<%=  total = (@cart.total_price * 20) / 100 %></p>
                 Total price with VAT: £<%= total + @cart.total_price %>
