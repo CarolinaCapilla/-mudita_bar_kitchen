@@ -1,18 +1,14 @@
 
 <div class="bg-section-kitchen page-hero-section menu-hero">
-
-<p>Yay!🎉 we can deliver to <%= params[:postcode] %>.  Explore the kitchens below</p>
-<div class="section pattern-section">
-
-  <div class="wrapper w-container">
-    <h1 class="page-hero-header">The Menu</h1>
+    <div class="wrapper w-container">
+    <h1 class="page-hero-header">Kitchens</h1>
   </div>
 </div>
 
 <div class="index-postcode-hero-section pattern-section">
   <div class="wrapper w-container" data-aos="fade-up" data-aos-duration="3000">
-    <div class="section-header-wrapper">
-      <h2>Congratulations insert emoji we deliver to x</h2>
+    <div class="section-header-wrapper-postcode">
+      <h2>Congratulations! 🎉  We deliver to <%= params[:postcode] %></h2>
     </div>
   </div>
 </div>
@@ -35,9 +31,9 @@
           <div class="kitchen-card" data-aos="fade-up" data-aos-duration="3000">
             <div class="kitchen-card-info">
               <div class="kitchen-card-content"><a href="" class="badge kitchen-card-category"></a>
-                <a href="" class="kitchen-card-header-link w-inline-block">
+                <div href="" class="kitchen-card-header-link w-inline-block">
                 <h3><%= kitchen.name %></h3>
-                </a>
+                </div>
                 <div class="divider"></div>
                 <p class="grey-text"><%= kitchen.name %></p>
                 <div class="kitchen-card-cuisine"><%= kitchen.cuisine %></div>
