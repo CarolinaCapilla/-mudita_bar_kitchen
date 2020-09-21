@@ -1,6 +1,5 @@
 <%# <h3>Order reference number <em>3X54TL</em></h3> %>
 <h3>Review your order</h3>
-
 <ul>
   <% @line_items.each do |line_item| %>
     <li>Dish: <%= line_item.item.dish %></li>
@@ -10,19 +9,11 @@
     <li>Total price with VAT: £<%= total + @cart.total_price %></li>
   <% end %>
 </ul>
-
 <%= current_user.first_name %>
 <%= current_user.last_name %>
 <%= current_user.address %>
 <%= @order.status %>
-
 <h4>ETA 15min</h4>
-
-<p>Card details</p>
-<input type="text" name="" id="" placeholder="Card number">
-<input type="integer" name="" id="" placeholder="Card holder name">
-<input type="integer" name="" id="" placeholder="Expiry date">
-<input type="integer" name="" id="" placeholder="CVC">
+<%= render 'shared/payment_form' %>
 <br>
 <br>
-<button class="payment-modal main-button">Pay</button>
