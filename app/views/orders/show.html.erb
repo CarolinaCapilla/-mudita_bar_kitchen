@@ -16,12 +16,13 @@
               <td><%= line_item.quantity %> </td>
               <%= items_sum = line_item.item.price * line_item.quantity %>
               <td><%= items_sum %> </td>
-              <td><%#= items_sum.sum(:items_sum) %> </td>
+              <td><%#= items_sum %> </td>
             </tr>
           <% end %>
           <tr>
             <td>Sum</td>
-              <td><%= @line_items.map(&:quantity).sum %></td>
+            <td><%= @line_items.map(&:quantity).sum %></td>
+            <td><%= @line_items.map(&:item).map(&:price).flatten.sum %> </td>
           </tr>
         </tbody>
       </table>
