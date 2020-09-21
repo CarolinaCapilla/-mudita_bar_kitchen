@@ -1,55 +1,35 @@
-
 <%# <h3>Order reference number <em>3X54TL</em></h3> %>
-<h3>Review your order</h3>
-<ul>
-  <% @line_items.each do |line_item| %>
-    <li>Dish: <%= line_item.item.dish %></li>
-    <li>Quantity: <%= line_item.quantity %></li>
-    <li>Item price: £<%= line_item.item.price %></li>
-    <li>VAT: £<%=  total = (@cart.total_price * 20) / 100 %></li>
-    <li>Total price with VAT: £<%= total + @cart.total_price %></li>
-  <% end %>
-</ul>
-<%= current_user.first_name %>
-<%= current_user.last_name %>
-<%= current_user.address %>
-<%= @order.status %>
-<h4>ETA 15min</h4>
-<%= render 'shared/payment_form' %>
+<div class="section pattern-section no-top-padding">
+  <div class="wrapper w-container">
+    <div class="reservation w-form">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12">
+            <h3 class="text-center">Review your order</h3>
+            <ul>
+              <% @line_items.each do |line_item| %>
+                <li>Dish: <%= line_item.item.dish %></li>
+                <li>Quantity: <%= line_item.quantity %></li>
+                <li>Item price: £<%= line_item.item.price %></li>
+              <% end %>
+              <br>
 
-
-<!-- <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <table>
-        <thead>
-          <tr>
-            <th>Dish Name</th>
-            <th>Quantity</th>
-            <th>Item Price</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <#% @line_items.each do |line_item| %>
-              <tr>
-                <td><%= line_item.item.dish %> </td>
-                <td><%= line_item.quantity %> </td>
-                <#% items_sum = line_item.item.price * line_item.quantity %>
-                <td> <%= items_sum %> </td>
-                <td><%#= items_sum.sum(:items_sum) %> </td>
-              </tr>
-              <tr>
-                <td>Sum</td>
-                  <td><%#= @line_item.quantity.map{|item| item.quantity.val}.reduce(0, :+) %></td>
-              </tr>
-        </tbody>
-      </table>
-      <p>Your order will be delivered to</p>
-      <%= @order.user.address %>
-
+                Total quantity: <%= @line_items.map(&:quantity).sum %>
+                <br>
+                Subtotal: £<%= @cart.total_price %>
+                <p>Total VAT: £<%=  total = (@cart.total_price * 20) / 100 %></p>
+                Total price with VAT: £<%= total + @cart.total_price %>
+            </ul>
+            <%= current_user.first_name %>
+            <%= current_user.last_name %>
+            <h5>Delivery address:</h5>
+            <%= current_user.address %>
+            <h5>Order status:</h5> <%= @order.status %>
+            <h5>ETA 15min</h5>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  <%= render 'shared/modal' %>
 </div>
-
-
