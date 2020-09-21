@@ -1,5 +1,28 @@
-<% @line_items.each do |line_item| %>
-  <%= line_item.item.dish %>: <%= line_item.quantity %>: <%= line_item.item.price %>
-<% end %>
+<%# <h3>Order reference number <em>3X54TL</em></h3> %>
+<h3>Review your order</h3>
 
-<button class="payment-modal">Pay</button>
+<ul>
+  <% @line_items.each do |line_item| %>
+    <li>Dish: <%= line_item.item.dish %></li>
+    <li>Quantity: <%= line_item.quantity %></li>
+    <li>Item price: £<%= line_item.item.price %></li>
+    <li>VAT: £<%=  total = (@cart.total_price * 20) / 100 %></li>
+    <li>Total price with VAT: £<%= total + @cart.total_price %></li>
+  <% end %>
+</ul>
+
+<%= current_user.first_name %>
+<%= current_user.last_name %>
+<%= current_user.address %>
+<%= @order.status %>
+
+<h4>ETA 15min</h4>
+
+<p>Card details</p>
+<input type="text" name="" id="" placeholder="Card number">
+<input type="integer" name="" id="" placeholder="Card holder name">
+<input type="integer" name="" id="" placeholder="Expiry date">
+<input type="integer" name="" id="" placeholder="CVC">
+<br>
+<br>
+<button class="payment-modal main-button">Pay</button>

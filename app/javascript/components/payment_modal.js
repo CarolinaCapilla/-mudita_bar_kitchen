@@ -5,10 +5,10 @@ const paymentButton = document.querySelector('.payment-modal')
 const paymentButtonPopOut = () => {
   paymentButton.addEventListener('click', (event) => {
     Swal.fire({
-      title: 'Error!',
-      text: 'Do you want to continue',
-      icon: 'error',
-      confirmButtonText: 'Cool'
+      title: 'Card details confirmed',
+      text: 'Payment completed',
+      icon: 'success',
+      confirmButtonText: 'OK'
     });
   });
 }
