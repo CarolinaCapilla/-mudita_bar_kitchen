@@ -1,12 +1,52 @@
-<%# <h3>Order reference number <em>3X54TL</em></h3> %>
 <div class="section pattern-section no-top-padding">
   <div class="wrapper w-container">
-    <div class="reservation w-form">
+    <div class="cart-reservation w-form">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12">
             <h3 class="text-center">Review your order</h3>
-            <ul>
+            <div class="cart-container ">
+            <table class="cart-table">
+              <tr>
+            <th class="cart-text">Items</th>
+            <th class="cart-text">Quantity</th>
+            <th class="cart-text text-right">Subtotal</th>
+          </tr>
+            <% @cart.line_items.each do |line_item| %>
+            <tr>
+              <td class="item-data">
+                <div class="cart-info">
+                  <% if line_item.item.photo.attached? %>
+                    <%= cl_image_tag line_item.item.photo.key, class: "img-cart" %>
+                  <% end %>
+                  <div>
+                    <h4 class="review-item-tag"><%= line_item.item.dish.capitalize %></h4>
+<!--                     <small>Price: £<%= line_item.item.price %></small>
+ -->               </div>
+                </div>
+              </td>
+              <td class="item-data"><%= line_item.quantity %></td>
+              <td class="item-data">£<%= line_item.total_price %></td>
+            </tr>
+          <% end %>
+        </table>
+        <div class="total-price">
+          <table class="total-table">
+            <tr>
+              <td class="item-data">Subtotal</td>
+              <td class="item-data">£<%= @cart.total_price %></td>
+            </tr>
+            <tr>
+              <td class="item-data">VAT</td>
+              <td class="item-data">£<%=  total = (@cart.total_price * 20) / 100 %></td>
+            </tr>
+              <tr>
+              <td class="item-data">Total</td>
+              <td class="item-data">£<%= total + @cart.total_price %></td>
+            </tr>
+          </table>
+        </div>
+<!--             <ul>
               <% @line_items.each do |line_item| %>
                 <li>Dish: <%= line_item.item.dish %></li>
                 <li>Quantity: <%= line_item.quantity %></li>
@@ -19,17 +59,33 @@
                 Subtotal: £<%= @cart.total_price %>
                 <p>Total VAT: £<%=  total = (@cart.total_price * 20) / 100 %></p>
                 Total price with VAT: £<%= total + @cart.total_price %>
-            </ul>
+            </ul> -->
             <%= current_user.first_name %>
             <%= current_user.last_name %>
-            <h5>Delivery address:</h5>
+            <div class="container mt-4">
+            <h4>Delivery address:</h4>
             <%= current_user.address %>
-            <h5>Order status:</h5> <%= @order.status %>
-            <h5>ETA 15min</h5>
+<!--             <h5>Order status:</h5> <%= @order.status %>
+            <h5>ETA 15min</h5> -->
+          </div>
           </div>
         </div>
       </div>
+      <div class="container d-flex justify-content-between mt-4">
+      <%#= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "btn btn-primary" %>
+      <%= link_to 'Edit Order', cart_path(@cart), class: 'main-button' %>
+      <%= render 'shared/modal' %>
+      </div>
     </div>
   </div>
+</div>
+<!--
+<div class="payment-reservation">
+<div class="wrapper">
+<div class="container">
   <%= render 'shared/modal' %>
 </div>
+</div>
+</div> -->
+</div>
+
