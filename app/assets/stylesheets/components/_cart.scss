@@ -1,5 +1,5 @@
 .cart-page{
-  margin: 80px auto;
+  margin: 0px auto;
 }
 .cart-table{
   width: 100%;
@@ -10,6 +10,9 @@
   height: 80px;
   margin-right: 10px;
   margin-left: -5px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
 }
 .cart-info{
   display: flex;
@@ -19,15 +22,22 @@
   text-align: left;
   padding: 5px;
   color: #fff;
-  background: #ff543b;
+  background: #212C42;
   font-weight: normal;
 }
+
 .item-tag{
   margin-bottom: 0px;
   margin-top: -6px;
 }
+
+.review-item-tag{
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
 .item-data{
   padding: 10px 5px;
+  outline:none;
 }
 .item-data input{
   width: 40px;
@@ -39,7 +49,7 @@
   justify-content: flex-end;
 }
 .total-table{
-  border-top: 3px solid #ff543b;
+  border-top: 3px solid #212C42;
   width: 100%;
   max-width: 350px;
 }
@@ -48,4 +58,86 @@
 }
 cart-text:last-child{
   text-align: right;
+}
+
+
+.cart-reservation {
+  position: relative;
+  z-index: 1030;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  margin-top: -160px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 48px 8% 48px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 4px solid #dfa25f;
+  background-color: #fff;
+}
+
+.text-center{
+color: #000000;
+box-sizing: border-box;
+margin-top: 16px;
+margin-bottom: 80px;
+font-family: Oswald, sans-serif;
+font-size: 28px;
+line-height: 36px;
+font-weight: 700;
+text-transform: uppercase;
+}
+
+table:hover tr {
+  background:none;
+}
+table:hover tr:hover ~tr {
+  background:none;
+}
+
+.payment-reservation {
+  position: relative;
+  z-index: 1030;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  margin-top: -160px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 48px 8% 48px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 4px solid #dfa25f;
+  background-color: #fff;
+}
+
+.modal-backdrop {
+    z-index: 1020;
 }
