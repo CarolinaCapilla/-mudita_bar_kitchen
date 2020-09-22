@@ -7,6 +7,9 @@ class Item < ApplicationRecord
   has_many :line_items
 
   scope :starters, -> { where(category: "Starters") }
+  scope :mains, -> { where(category: "Mains") }
+  scope :desserts, -> { where(category: "Desserts") }
+  scope :drinks, -> { where(category: "Drinks") }
 
   CATEGORIES = ['Starters', 'Mains', 'Desserts', 'Sharing', 'Platters', 'Snacks', 'Specials', 'Drinks', 'Soft Drinks',
                 'Hot Drinks', 'Alcoholic Drinks']

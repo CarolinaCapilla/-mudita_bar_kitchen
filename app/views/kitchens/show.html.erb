@@ -7,14 +7,13 @@
 
 <div class="item-section">
   <div class="wrapper w-container">
-    <% Item.starters.each do |starter| %>
     <div class="section-header-wrapper">
       <div class="sub-header">Menu</div>
-      <h2>Breakfast</h2>
+      <h2>Starters</h2>
       <div class="divider"></div>
     </div>
     <div class="menu">
-      <% @kitchen.items.each do |item| %>
+      <% @kitchen.items.starters.each do |item| %>
       <div class="menu-grid-item">
           <div class="menu-grid-card">
             <div class="menu-grid-image">
@@ -47,7 +46,130 @@
           </div>
           <% end %>
       </div>
-        <% end %>
+  </div>
+  <div class="wrapper w-container">
+  <div class="section-header-wrapper">
+      <div class="sub-header">Menu</div>
+      <h2>Mains</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="menu">
+      <% @kitchen.items.mains.each do |item| %>
+      <div class="menu-grid-item">
+          <div class="menu-grid-card">
+            <div class="menu-grid-image">
+              <%= cl_image_tag item.photo.key %>
+            </div>
+            <% if current_user == @kitchen.user %>
+            <% end %>
+            <%= button_to 'Add to cart', line_items_path(item_id: item.id), class: 'cart-button' %>
+            <div class="menu-info w-clearfix">
+              <div class="menu-info-main">
+                <div class="menu-name"><%= item.dish %></div>
+                <div class="menu-dots-line"></div>
+                <div class="menu-price">
+                  <div>£</div>
+                  <div><%= item.price %></div>
+                </div>
+              </div>
+              <div class="menu-ingredients">
+                <%= item.description %>
+              </div>
+              <div class="menu-more w-clearfix">
+                <div class="badge menu-item-tooltip">
+                  <%= item.allergen %>
+                </div>
+              </div>
+            </div>
+            <%= link_to "Edit this item", edit_item_path(item_id: item.id), class: 'edit-cart-button' %>
+            <%= link_to "Delete this item", item_path(item_id: item.id), method: :delete, class: 'edit-cart-button' %>
+            </div>
+          </div>
+          <% end %>
+      </div>
+      </div>
+      <div class="wrapper w-container">
+  <div class="section-header-wrapper">
+      <div class="sub-header">Menu</div>
+      <h2>Desserts</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="menu">
+      <% @kitchen.items.desserts.each do |item| %>
+      <div class="menu-grid-item">
+          <div class="menu-grid-card">
+            <div class="menu-grid-image">
+              <%= cl_image_tag item.photo.key %>
+            </div>
+            <% if current_user == @kitchen.user %>
+            <% end %>
+            <%= button_to 'Add to cart', line_items_path(item_id: item.id), class: 'cart-button' %>
+            <div class="menu-info w-clearfix">
+              <div class="menu-info-main">
+                <div class="menu-name"><%= item.dish %></div>
+                <div class="menu-dots-line"></div>
+                <div class="menu-price">
+                  <div>£</div>
+                  <div><%= item.price %></div>
+                </div>
+              </div>
+              <div class="menu-ingredients">
+                <%= item.description %>
+              </div>
+              <div class="menu-more w-clearfix">
+                <div class="badge menu-item-tooltip">
+                  <%= item.allergen %>
+                </div>
+              </div>
+            </div>
+            <%= link_to "Edit this item", edit_item_path(item_id: item.id), class: 'edit-cart-button' %>
+            <%= link_to "Delete this item", item_path(item_id: item.id), method: :delete, class: 'edit-cart-button' %>
+            </div>
+          </div>
+          <% end %>
+      </div>
+      </div>
+      <div class="wrapper w-container">
+  <div class="section-header-wrapper">
+      <div class="sub-header">Menu</div>
+      <h2>Drinks</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="menu">
+      <% @kitchen.items.drinks.each do |item| %>
+      <div class="menu-grid-item">
+          <div class="menu-grid-card">
+            <div class="menu-grid-image">
+              <%= cl_image_tag item.photo.key %>
+            </div>
+            <% if current_user == @kitchen.user %>
+            <% end %>
+            <%= button_to 'Add to cart', line_items_path(item_id: item.id), class: 'cart-button' %>
+            <div class="menu-info w-clearfix">
+              <div class="menu-info-main">
+                <div class="menu-name"><%= item.dish %></div>
+                <div class="menu-dots-line"></div>
+                <div class="menu-price">
+                  <div>£</div>
+                  <div><%= item.price %></div>
+                </div>
+              </div>
+              <div class="menu-ingredients">
+                <%= item.description %>
+              </div>
+              <div class="menu-more w-clearfix">
+                <div class="badge menu-item-tooltip">
+                  <%= item.allergen %>
+                </div>
+              </div>
+            </div>
+            <%= link_to "Edit this item", edit_item_path(item_id: item.id), class: 'edit-cart-button' %>
+            <%= link_to "Delete this item", item_path(item_id: item.id), method: :delete, class: 'edit-cart-button' %>
+            </div>
+          </div>
+          <% end %>
+      </div>
+      </div>
   </div>
 </div>
 
