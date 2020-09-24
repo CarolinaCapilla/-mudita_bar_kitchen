@@ -1,3 +1,7 @@
+.my-container{
+  margin-top: 180px;
+}
+
 .progress img {
   width: 70px;
   margin-left: auto;
@@ -9,10 +13,11 @@
   margin-right: auto;
   text-align: center;
   list-style-type: none;
+  margin-top: -50px;
 }
 .progress ul li {
   display: inline-block;
-  width: 200px;
+  width: 195px;
   position: relative;
 }
 .progress{
@@ -39,22 +44,22 @@
   width: 205px;
   display: block;
   position: absolute;
-  right: -8px;
+  right: -5px;
   margin-top: -9px;
   z-index: -1;
 }
 
 .completed .fas{
-  background: #148e14;
+  background: #232d41;
 }
 .completed .fas::after{
-  background: #148e14;
+  background: #232d41;
 }
 .in-progress .fas{
-  background: #60aa97;
+  background: #5fdfa2;
 }
 .in-progress .fas::after{
-  background: #60aa97;
+  background: #5fdfa2;
 }
 // .progress ul li:nth-child(1) .fas {
 //   background: #148e14;

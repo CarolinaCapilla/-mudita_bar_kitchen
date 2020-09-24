@@ -5,7 +5,7 @@ class Order < ApplicationRecord
   belongs_to :cart
 
   # validates :devlivery_address, presence: true
-
+  
   # def processing
   #   @order.status = "Processing"
   # end
