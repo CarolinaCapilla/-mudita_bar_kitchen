@@ -32,7 +32,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to @item, alert: "Item successfully updated."
+      redirect_to kitchen_path(@item.kitchen), alert: "Item successfully updated."
     else
       render :edit
     end
