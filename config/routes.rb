@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   resources :line_items
   devise_for :users
   root to: 'pages#home'
-  get 'index/', to: 'pages#index', as: 'index' 
 
 
   resources :items, except: [:index, :new, :create, :show]

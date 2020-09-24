@@ -44,8 +44,7 @@
                   <% end %>
                   <div>
                     <h4 class="review-item-tag"><%= line_item.item.dish.capitalize %></h4>
-<!--                     <small>Price: £<%= line_item.item.price %></small>
- -->               </div>
+          </div>
                 </div>
               </td>
               <td class="item-data"><%= line_item.quantity %></td>
@@ -69,46 +68,25 @@
             </tr>
           </table>
         </div>
-<!--             <ul>
-              <% @line_items.each do |line_item| %>
-                <li>Dish: <%= line_item.item.dish %></li>
-                <li>Quantity: <%= line_item.quantity %></li>
-                <li>Item price: £<%= line_item.item.price %></li>
-              <% end %>
-              <br>
 
-                Total quantity: <%= @line_items.map(&:quantity).sum %>
-                <br>
-                Subtotal: £<%= @cart.total_price %>
-                <p>Total VAT: £<%=  total = (@cart.total_price * 20) / 100 %></p>
-                Total price with VAT: £<%= total + @cart.total_price %>
-            </ul> -->
             <%= current_user.first_name %>
             <%= current_user.last_name %>
             <div class="container mt-4">
             <h4>Delivery address:</h4>
             <%= current_user.address %>
-<!--             <h5>Order status:</h5> <%= @order.status %>
-            <h5>ETA 15min</h5> -->
+
           </div>
           </div>
         </div>
       </div>
       <div class="container d-flex justify-content-between mt-4">
-      <%#= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "btn btn-primary" %>
+
       <%= link_to 'Edit Order', cart_path(@cart), class: 'main-button' %>
       <%= render 'shared/modal' %>
       </div>
     </div>
   </div>
 </div>
-<!--
-<div class="payment-reservation">
-<div class="wrapper">
-<div class="container">
-  <%= render 'shared/modal' %>
-</div>
-</div>
-</div> -->
+
 </div>
 
