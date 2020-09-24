@@ -16,7 +16,7 @@ class Item < ApplicationRecord
   ALLERGENS = ['Celery', 'Gluten', 'Crustaceans', 'Eggs', 'Fish', 'Lupin', 'Milk', 'Molluscs',
                'Mustard', 'Tree nuts', 'Peanuts', 'Sesame', 'Soybeans', 'Sulphites']
 
-  validates :dish, :description, :category, :price, :allergen, presence: true
+  validates :dish, :description, :category, :price, presence: true
   # validates :description, length: { minimum: 300 }
   validates :category, inclusion: { in: CATEGORIES }
   validates :price, numericality: true

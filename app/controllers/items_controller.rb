@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
     @item.user = current_user
     @item.allergen = params['item']['allergen'].join(',')
     if @item.save
-      redirect_to kitchen_path(@item.kitchen), alert: "Item successfully created."
+      redirect_to kitchen_path(@item.kitchen), alert: "Woohoo! You added an item to your Menu."
     else
       render :new
     end

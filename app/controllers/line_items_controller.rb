@@ -22,7 +22,7 @@ class LineItemsController < ApplicationController
     item = Item.find(params[:item_id])
     @line_item = @cart.add_item(item)
     if @line_item.save
-      redirect_to cart_path(@cart), alert: 'Item added to cart.'
+      redirect_to cart_path(@cart), alert: 'Woohoo! You added an item to your cart.'
     else
       render :new
     end
@@ -30,7 +30,7 @@ class LineItemsController < ApplicationController
 
   def update
     if @line_item.update(line_item_params)
-      redirect_to @line_item, alert: 'Item successfully updated.'
+      redirect_to @line_item, alert: 'Great! You added an item to your Menu.'
     else
       render :edit
     end
@@ -39,7 +39,7 @@ class LineItemsController < ApplicationController
   def destroy
     @cart = Cart.find(session[:cart_id])
     @line_item.destroy
-    redirect_to cart_path(@cart), alert: 'Item successfuly deleted.'
+    redirect_to cart_path(@cart), alert: 'You removed an item!'
   end
 
   private
