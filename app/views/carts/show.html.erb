@@ -1,8 +1,14 @@
+<div class="my-container w-container">
+  <div class="cart-reservation w-form">
+    <%= render 'shared/progress_bar' %>
+  </div>
+</div>
+
 <div class="section pattern-section no-top-padding">
   <div class="wrapper w-container">
     <div class="cart-reservation w-form">
       <div class="container cart-page">
-        <h3 class="text-center">Your Cart</h3>
+        <h3 class="text-center">Review your order</h3>
         <table class="cart-table">
           <tr>
             <th class="cart-text">Items</th>
@@ -55,14 +61,3 @@
   </div>
 </div>
 
-
-<!-- <div class="container d-flex justify-content-between">
-  <%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "btn btn-primary" %>
-  <%= link_to 'Checkout', cart_orders_path(@cart), method: :post, class: 'btn btn-primary' %>
-</div>
-
-
-
-      <div class="container mt-3">
-      <%= link_to 'Keep Shopping', kitchens_path, class: 'btn btn-primary' %>
-      </div> -->

@@ -1,0 +1,81 @@
+.my-container{
+  margin-top: 180px;
+}
+
+.progress img {
+  width: 70px;
+  margin-left: auto;
+  margin-bottom: 20px;
+}
+
+.progress ul{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  list-style-type: none;
+  margin-top: -50px;
+}
+.progress ul li {
+  display: inline-block;
+  width: 195px;
+  position: relative;
+}
+.progress{
+  overflow: visible;
+  margin: 50px auto;
+  color: #dfa25f;
+  background: transparent;
+}
+.progress i {
+  margin-bottom: 20px;
+  background: #ccc;
+  width: 22px;
+  height: 20px;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  padding: 4px;
+}
+
+.progress .fas::after{
+  content: '';
+  background: #ccc;
+  height: 5px;
+  width: 205px;
+  display: block;
+  position: absolute;
+  right: -5px;
+  margin-top: -9px;
+  z-index: -1;
+}
+
+.completed .fas{
+  background: #232d41;
+}
+.completed .fas::after{
+  background: #232d41;
+}
+.in-progress .fas{
+  background: #5fdfa2;
+}
+.in-progress .fas::after{
+  background: #5fdfa2;
+}
+// .progress ul li:nth-child(1) .fas {
+//   background: #148e14;
+// }
+// .progress ul li:nth-child(1) .fas::after{
+//   background: #148e14;
+// }
+// .progress ul li:nth-child(2) .fas {
+//   background: #148e14;
+// }
+// .progress ul li:nth-child(2) .fas::after{
+//   background: #148e14;
+// }
+// .progress ul li:nth-child(3) .fas{
+//   background: #60aa97;
+// }
+// .progress ul li:nth-child(3) .fas::after{
+//   background: #60aa97;
+// }
