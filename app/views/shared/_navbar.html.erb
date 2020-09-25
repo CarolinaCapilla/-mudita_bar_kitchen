@@ -14,7 +14,9 @@
     <ul class="navbar-nav mr-auto">
         <% if user_signed_in? %>
           <li class="nav-item">
+          <div id="hideCart">
             <%= render 'shared/cart' %>
+          </div>
           </li>
           <!-- <li class="nav-item">
             <%= link_to "Create new Kitchen", new_kitchen_path , class: "nav-link" %>
