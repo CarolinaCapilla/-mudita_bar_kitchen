@@ -23,7 +23,7 @@ before_action :set_order, only: %i[show edit update destroy]
     order_params = params.permit(:cart_id).merge(delivery_address: current_user.address, user: current_user)
     @order = Order.create(order_params)
     if @order.save
-      redirect_to order_path(@order), alert: "Order successfully created."
+      redirect_to order_path(@order)
     else
       render :new
     end

@@ -35,7 +35,7 @@ class CartsController < ApplicationController
   def destroy
     @cart.destroy if @cart_id == session[:cart_id]
     session[:cart_id] = nil
-    redirect_to root_path, alert: 'Cart was successfully destroyed.'
+    redirect_to root_path, alert: 'Your cart is empty!'
   end
 
   private

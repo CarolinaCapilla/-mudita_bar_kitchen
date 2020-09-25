@@ -1,11 +1,10 @@
-
 <div class="bg-section-kitchen page-hero-section menu-hero">
   <div class="wrapper w-container">
     <h1 class="page-hero-header"><%= @kitchen.name %></h1>
   </div>
 </div>
 
-<div class="item-section">
+<div class="item-section-kitchen-show">
   <div class="wrapper w-container">
     <div class="section-header-wrapper">
       <div class="sub-header">Menu</div>
@@ -40,6 +39,10 @@
                 </div>
               </div>
             </div>
+
+              <% if current_user == @kitchen.user %>
+
+
             <%= link_to "Edit this item", edit_item_path(item), class: 'edit-cart-button' %>
             <%= link_to "Delete this item", item_path(item), method: :delete, class: 'edit-cart-button' %>
             </div>
@@ -81,6 +84,8 @@
                 </div>
               </div>
             </div>
+
+              <% if current_user == @kitchen.user %>
             <%= link_to "Edit this item", edit_item_path(item), class: 'edit-cart-button' %>
             <%= link_to "Delete this item", item_path(item), method: :delete, class: 'edit-cart-button' %>
             </div>
@@ -122,6 +127,7 @@
                 </div>
               </div>
             </div>
+              <% if current_user == @kitchen.user %>
             <%= link_to "Edit this item", edit_item_path(item), class: 'edit-cart-button' %>
             <%= link_to "Delete this item", item_path(item), method: :delete, class: 'edit-cart-button' %>
             </div>
@@ -163,6 +169,10 @@
                 </div>
               </div>
             </div>
+              <% if current_user == @kitchen.user %>
+                <%= link_to "Edit this item", edit_item_path(item_id: item.id), class: 'edit-cart-button' %>
+                <%= link_to "Delete this item", item_path(item_id: item.id), method: :delete, class: 'edit-cart-button' %>
+               <% end %>
             <%= link_to "Edit this item", edit_item_path(item), class: 'edit-cart-button' %>
             <%= link_to "Delete this item", item_path(item), method: :delete, class: 'edit-cart-button' %>
             </div>
@@ -172,6 +182,20 @@
       </div>
   </div>
 </div>
+
+<% if user_signed_in? && current_user == @kitchen.user %>
+<div class="index-bg-section cta-section">
+  <div class="wrapper w-container">
+    <div class="cta-content">
+      <h1><em>Add an Dish?</em></h1>
+      <%= link_to "Click here", new_kitchen_item_path(@kitchen), class: "main-button" %>
+
+
+  </div>
+</div>
+</div>
+<% end %>
+
 
 
 
@@ -185,7 +209,7 @@
   | <%= link_to 'Leave a review',  new_kitchen_review_path(@kitchen) %>
   <% end %>
 </div>
-
+ 
 
 
 

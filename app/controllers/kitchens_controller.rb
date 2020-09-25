@@ -1,8 +1,8 @@
 class KitchensController < ApplicationController
   before_action :set_kitchen, only: %i[show edit update destroy]
   skip_before_action :authenticate_user!
-  
-  
+
+
 
   def index
     @kitchens = Kitchen.all
@@ -21,7 +21,7 @@ class KitchensController < ApplicationController
     @kitchen = Kitchen.new(kitchen_params)
     @kitchen.user = current_user
     if @kitchen.save
-      redirect_to new_kitchen_item_path(@kitchen), alert: 'Kitchen successfully created.'
+      redirect_to new_kitchen_item_path(@kitchen), alert: 'Welcome, to The Menu!'
     else
       render :new
     end
