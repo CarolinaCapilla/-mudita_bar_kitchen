@@ -1,23 +1,25 @@
-<div class="my-container w-container">
-  <div class="cart-reservation w-form">
-    <div class="progress">
-      <ul>
-          <li class="completed">
-          <%= cl_image_tag("review.png_vblhbv.png") %><br>
-          <i class="fas fa-check"></i>
-          <p>Review your order</p>
+<div class="progress-section pattern-section no-top-padding">
+  <div class="my-container w-container">
+    <div class="cart-reservation w-form">
+      <div class="progress">
+        <ul>
+            <li class="completed">
+            <%= cl_image_tag("review.png_vblhbv.png") %><br>
+            <i class="fas fa-check"></i>
+            <p>Review your order</p>
+            </li>
+          <li id="payment" class="in-progress">
+            <%= cl_image_tag("payment.png") %><br>
+            <i id='payment-icon' class="fas fa-sync-alt"></i>
+          <p>Payment</p>
           </li>
-        <li id="payment" class="in-progress">
-          <%= cl_image_tag("payment.png") %><br>
-          <i id='payment-icon' class="fas fa-sync-alt"></i>
-        <p>Payment</p>
-        </li>
-        <li id="enjoy">
-        <%= cl_image_tag("enjoy.png") %><br>
-        <i id="enjoyIcon" class="fas fa-times-circle"></i>
-        <p>Enjoy</p>
-        </li>
-      </ul>
+          <li id="enjoy">
+          <%= cl_image_tag("enjoy.png") %><br>
+          <i id="enjoyIcon" class="fas fa-times-circle"></i>
+          <p>Enjoy</p>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
