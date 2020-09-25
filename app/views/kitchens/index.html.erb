@@ -1,8 +1,9 @@
 
 <div class="bg-section-kitchen page-hero-section menu-hero">
-  <div class="wrapper w-container">
-    <h1 class="page-hero-header">Kitchens</h1>
-  </div>
+
+    <div class="wrapper w-container">
+    <h1 class="page-hero-header">All Menus</h1>
+    </div>
 </div>
 
 <div class="index-postcode-hero-section pattern-section">
@@ -37,10 +38,10 @@
                 <h3><%= kitchen.name %></h3>
                 </div>
                 <div class="divider"></div>
-                <p class="grey-text"><%= kitchen.name %></p>
+                <p class="grey-text">by <%= kitchen.user.name %></p>
                 <div class="kitchen-card-cuisine"><%= kitchen.cuisine %></div>
                 <div>
-                <%= link_to "Explore The Menu", kitchen_path(kitchen), class: "main-button" %>
+                <%= link_to "Explore This Menu", kitchen_path(kitchen), class: "main-button" %>
                 </div>
               </div>
               <div class="frame"></div>
