@@ -12,6 +12,8 @@ function changeClass () {
   const enjoyIcon = document.getElementById('enjoyIcon')
   enjoyIcon.classList.replace('fa-times-circle','fa-check')
   document.getElementById('confirmation-title').innerHTML = 'Knock Knock, your pizza\'s here 🍕🎉'
+  const removeCart = document.getElementById('hideCart')
+  removeCart.parentNode.removeChild(removeCart)
 };
 
 function paymentButtonPopOut() {
