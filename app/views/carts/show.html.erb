@@ -26,7 +26,8 @@
                     <h4 class="item-tag"><%= line_item.item.dish.capitalize %></h4>
                     <small>Price: £<%= line_item.item.price %></small>
                     <br>
-                    <%= link_to 'Remove', line_item, method: :delete %>
+                    <%= link_to '', line_item, class: 'far fa-trash-alt icon-black', method: :delete %>
+                    <%#= link_to 'Delete item', line_item, method: :delete %>
                   </div>
                 </div>
               </td>
