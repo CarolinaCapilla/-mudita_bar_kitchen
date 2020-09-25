@@ -1,3 +1,10 @@
+.item-section-kitchen-show {
+  position: relative;
+  padding: 80px 56px 80px;
+  background-color: #fff;
+  text-align: center;
+}
+
 .item-section {
   position: relative;
   padding: 80px 56px 240px;
@@ -40,9 +47,9 @@
 }
 
 .bg-section-kitchen.page-hero-section.menu-hero {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(17, 17, 17, 0.8)), to(rgba(17, 17, 17, 0.8))), url('https://res.cloudinary.com/dc8t19jnn/image/upload/v1599760723/rawpixel-com-247358_ua5mei.jpg');
-  background-image: linear-gradient(180deg, rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8)), url('https://res.cloudinary.com/dc8t19jnn/image/upload/v1599760723/rawpixel-com-247358_ua5mei.jpg');
-  background-position: 0px 0px, 50% 50%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(17, 17, 17, 0.8)), to(rgba(17, 17, 17, 0.8))), url('https://res.cloudinary.com/dc8t19jnn/image/upload/v1600963283/todd-quackenbush-x5SRhkFajrA-unsplash_kmj0pl.jpg');
+  background-image: linear-gradient(180deg, rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.8)), url('https://res.cloudinary.com/dc8t19jnn/image/upload/v1600963283/todd-quackenbush-x5SRhkFajrA-unsplash_kmj0pl.jpg');
+  background-position: 0px 0px, 0% 50%;
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;
   background-attachment: scroll, scroll;
