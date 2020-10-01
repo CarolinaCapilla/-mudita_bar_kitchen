@@ -22,7 +22,8 @@ class LineItemsController < ApplicationController
     item = Item.find(params[:item_id])
     @line_item = @cart.add_item(item)
     if @line_item.save
-      redirect_to cart_path(@cart), alert: 'Woohoo! You added an item to your cart.'
+      redirect_to cart_path(@cart),
+                  alert: 'Woohoo! You added an item to your cart.'
     else
       render :new
     end

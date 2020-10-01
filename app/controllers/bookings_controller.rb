@@ -8,14 +8,6 @@ class BookingsController < ApplicationController
 
   def show; end
 
-  # @booking.kitchen.name
-    # if current_user.chef
-    #   @booking = Booking.where(user: user)
-    # else
-    #   @items = Item.all
-    # end
-  # end
-
   def new
     @station = Station.find(params[:station_id])
     @booking = Booking.new
@@ -28,7 +20,8 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.calculate_price
     if @booking.save
-      redirect_to station_bookings_path(@booking.station), notice: "Booking successfully created."
+      redirect_to station_bookings_path(@booking.station),
+                  notice: 'Booking successfully created.'
     else
       render :new
     end
@@ -36,7 +29,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    redirect_to stations_path, notice: "booking successfully destroyed."
+    redirect_to stations_path, notice: 'booking successfully destroyed.'
   end
 
   private

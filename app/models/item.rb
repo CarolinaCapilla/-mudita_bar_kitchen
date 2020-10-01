@@ -6,18 +6,42 @@ class Item < ApplicationRecord
   has_one_attached :photo
   has_many :line_items
 
-  scope :starters, -> { where(category: "Starters") }
-  scope :mains, -> { where(category: "Mains") }
-  scope :desserts, -> { where(category: "Desserts") }
-  scope :drinks, -> { where(category: "Drinks") }
+  scope :starters, -> { where(category: 'Starters') }
+  scope :mains, -> { where(category: 'Mains') }
+  scope :desserts, -> { where(category: 'Desserts') }
+  scope :drinks, -> { where(category: 'Drinks') }
 
-  CATEGORIES = ['Starters', 'Mains', 'Desserts', 'Sharing', 'Platters', 'Snacks', 'Specials', 'Drinks', 'Soft Drinks',
-                'Hot Drinks', 'Alcoholic Drinks']
-  ALLERGENS = ['Celery', 'Gluten', 'Crustaceans', 'Eggs', 'Fish', 'Lupin', 'Milk', 'Molluscs',
-               'Mustard', 'Tree nuts', 'Peanuts', 'Sesame', 'Soybeans', 'Sulphites']
+  CATEGORIES = [
+    'Starters',
+    'Mains',
+    'Desserts',
+    'Sharing',
+    'Platters',
+    'Snacks',
+    'Specials',
+    'Drinks',
+    'Soft Drinks',
+    'Hot Drinks',
+    'Alcoholic Drinks'
+  ]
+  ALLERGENS = [
+    'Celery',
+    'Gluten',
+    'Crustaceans',
+    'Eggs',
+    'Fish',
+    'Lupin',
+    'Milk',
+    'Molluscs',
+    'Mustard',
+    'Tree nuts',
+    'Peanuts',
+    'Sesame',
+    'Soybeans',
+    'Sulphites'
+  ]
 
   validates :dish, :description, :category, :price, presence: true
-  # validates :description, length: { minimum: 300 }
   validates :category, inclusion: { in: CATEGORIES }
   validates :price, numericality: true
 
@@ -30,5 +54,3 @@ class Item < ApplicationRecord
     end
   end
 end
-
-
