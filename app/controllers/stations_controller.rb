@@ -11,7 +11,7 @@ class StationsController < ApplicationController
     @station = Station.new(station_params)
     # @station.user = current_user
     if @station.save
-      redirect_to station_path(@station), alert: "Station successfully created."
+      redirect_to station_path(@station), alert: 'Station successfully created.'
     else
       render :new
     end

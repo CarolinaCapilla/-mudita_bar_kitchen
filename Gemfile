@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'redis', '~> 4.0'
 gem 'rails-assets-sweetalert2', '~> 5.1.1', source: 'https://rails-assets.org'
 gem 'sweet-alert2-rails'
+gem 'prettier'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -3,21 +3,20 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-
-  resources :items, except: [:index, :new, :create, :show]
+  resources :items, except: %i[index new create show]
   resources :carts do
     resources :orders
   end
-  resources :orders, only: [:destroy, :show]
+  resources :orders, only: %i[destroy show]
 
   resources :kitchens do
-    resources :reviews, only: [:new, :create]
-    resources :items, only: [:new, :create, :show]
+    resources :reviews, only: %i[new create]
+    resources :items, only: %i[new create show]
   end
-  resources :reviews, only: [:destroy]
+  resources :reviews, only: %i[destroy]
 
   resources :stations do
-    resources :bookings, only: [:new, :index, :create, :show]
+    resources :bookings, only: %i[new index create show]
   end
-  resources :bookings, only: [:destroy]
+  resources :bookings, only: %i[destroy]
 end
